@@ -1,12 +1,8 @@
-version: '3.8'
+version: '3'
 services:
-  web:
-    build:
-      context: ./
-    volumes:
-      - .:/app
-    command: npm run dev
+  frontend:
+    build: ./app
+    image: pp3times/subtext:latest
     ports:
       - '3000:3000'
-    environment:
-      NODE_ENV: development
+    container_name: app_container

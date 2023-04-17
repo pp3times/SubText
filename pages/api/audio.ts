@@ -14,22 +14,8 @@ export default function GET(
   }
 
   console.log('video ID:', video_id)
-  // console.log('process.cwd():', process.cwd())
-  // console.log(
-  //   'path.join(process.cwd(), "scripts/download-audio.sh"):',
-  //   path.join(process.cwd(), 'scripts/download-audio.sh')
-  // )
-  // const cmd = spawn(path.join(process.cwd(), 'scripts/download-audio.sh'), [
-  //   video_id || ''
-  // ])
-  // const cmd = spawn('sh', [
-  //   path.join(process.cwd(), 'scripts/download-audio.sh'),
-  //   video_id || ''
-  // ])
-  const cmd = spawn('sh', [
-    '-c',
-    `${path.join(process.cwd(), 'scripts/download-audio.sh')} ${video_id || ''}`
+  const cmd = spawn(path.join(process.cwd(), 'scripts/download-audio.sh'), [
+    video_id || ''
   ])
-  console.log('cmd:', cmd)
   transferChildProcessOutput(cmd, response)
 }
