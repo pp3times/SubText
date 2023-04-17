@@ -1,18 +1,15 @@
-FROM node:18-alpine
+FROM node:18
 
 WORKDIR /app
-COPY . .
 
-RUN apk add --no-cache python3 \
-    && python3 -m ensurepip \
-    && pip3 install --no-cache --upgrade pip setuptools wheel
-
-# COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
+COPY package*.json ./
 
 RUN npm install
-# RUN npm cache clean
-# RUN npm install -g npm
-# RUN npm install
 
-CMD ["npm", "run", "dev"]
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
