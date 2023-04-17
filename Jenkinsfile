@@ -9,13 +9,13 @@ pipeline {
         stage('Clean up') {
             steps {
                 echo 'Initial : Stop and remove running containers'
-                sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down --remove-orphans'
+                sh 'docker-compose down --remove-orphans'
             }
         }
         stage('Build and Run Containers') {
             steps {
                 echo 'Build and Run the Containers using Docker Compose'
-                sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} up -d'
+                sh 'docker-compose up -d'
             }
         }
     }
