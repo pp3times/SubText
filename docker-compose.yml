@@ -1,12 +1,11 @@
-version: "3.3"
+version: '3.8'
+
 services:
-  nextjs:
+  app:
+    image: my-next-app
+    container_name: my-next-app
+    restart: unless-stopped
     ports:
-      - 3000:3000
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/var/movable/app
-      - /var/movable/app/node_modules
-      - /var/movable/app/.nexts
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
