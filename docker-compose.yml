@@ -1,8 +1,12 @@
-version: '3'
+version: "3.3"
 services:
-  frontend:
-    build: ./app
-    image: pp3times/subtext:latest
+  nextjs:
     ports:
-      - '3000:3000'
-    container_name: app_container
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/movable/app
+      - /var/movable/app/node_modules
+      - /var/movable/app/.nexts

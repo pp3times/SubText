@@ -1,15 +1,23 @@
-FROM node:18
+FROM node:12
 
-WORKDIR /app
+ENV PORT 3000
 
-COPY package*.json ./
+# Create app directory
+RUN mkdir /var/movable/ && mkdir /var/movable/app
+WORKDIR /var/movable/app
 
+RUN rm -rf .next*
+# Installing dependencies
+COPY package*.json /var/movable/app/
 RUN npm install
 
-COPY . .
+# Copying source files
+COPY . /var/movable/app
 
+
+# Building app
 RUN npm run build
-
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Running the app
+CMD "npm" "run" "start_prod"
