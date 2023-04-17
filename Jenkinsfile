@@ -18,19 +18,5 @@ pipeline {
                 sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} up -d'
             }
         }
-        // stage('Push Images') {
-        //     steps {
-        //         echo 'Pushing Images'
-        //         withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-        //             sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
-        //             sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} push'
-        //         }
-        //     }
-        // }
-        // stage('Trigger slave') {
-        //     steps {
-        //         build job: 'slave'
-        //     }
-        // }
     }
 }
