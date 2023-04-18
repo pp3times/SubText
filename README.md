@@ -31,3 +31,7 @@ NextJS
 
 python
 openai
+
+## clip video present
+
+[https://drive.google.com/file/d/1k8bEAg2Uxwl9RyQzqrP_o-mMjxIIj7Xk/view?usp=sharing]
