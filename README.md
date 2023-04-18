@@ -35,3 +35,5 @@ openai
 ## clip video present
 
 [https://drive.google.com/file/d/1k8bEAg2Uxwl9RyQzqrP_o-mMjxIIj7Xk/view?usp=sharing]
+
+![หลักฐานการอัพไฟล์](https://cdn.discordapp.com/attachments/793963223916871710/1097772689944485938/Screenshot_2023-04-18_at_13.34.40.png)
