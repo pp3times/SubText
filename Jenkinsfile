@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build and Run Containers') {
             steps {
-                echo 'Build and Run the Containers using Docker Compose'
+                echo 'Build and Run the Containers using Docker Compose.'
                 sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} up -d'
             }
         }
