@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clean up') {
             steps {
-                echo 'Initial : Stop and remove running container'
+                echo 'Initial : Stop and remove running containers'
                 sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down --remove-orphans'
             }
         }
